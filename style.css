@@ -1,0 +1,110 @@
+/* Center the content vertically and horizontally */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+    position: relative; /* For absolute positioning of letters */
+    background-color: aquamarine;
+}
+
+/* Style for the div that displays the name */
+#nameDisplay {
+    font-size: 5rem; /* Font size for the name */
+    color: #333; /* Text color */
+    text-align: center;
+    display: flex; /* Use flexbox for letter alignment */
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Allows positioning over background */
+    z-index: 10; /* Ensure name display is on top */
+}
+
+/* Bouncing letters background */
+.bouncing-letters {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1; /* Behind the main content */
+}
+
+/* Individual letter style */
+.bouncing-letter {
+    position: absolute;
+    opacity: 0.5; /* Faded appearance */
+    font-size: 2rem; /* Size of bouncing letters */
+    color: rgba(0, 0, 0, 0.5); /* Faded text color */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+/* Center the content vertically and horizontally */
+.center {
+    z-index: 10; /* Ensure form is above the background */
+    position: relative; /* Position for circular layout */
+}
+
+/* Display button styling */
+#displayButton {
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make the button round */
+    padding: 20px 30px; /* Button padding */
+    font-size: 1.5rem; /* Font size for button text */
+    cursor: pointer; /* Change cursor to pointer */
+    position: relative; /* Position for animation */
+    transition: transform 0.3s; /* Transition for scaling effect */
+    margin-top: 20px; /* Margin above the button */
+}
+
+/* Hover effect for button */
+#displayButton:hover {
+    transform: scale(1.1); /* Scale button on hover */
+}
+
+/* Individual letter animation */
+.letter {
+    opacity: 0; /* Start invisible */
+    display: inline-block; /* Allow letter animation */
+    transform: translateX(50px); /* Start slightly off to the right */
+    animation: bounceIn 0.5s forwards ease-in-out; /* Use bounce animation */
+}
+
+/* Bounce in animation from right to left */
+@keyframes bounceIn {
+    0% {
+        opacity: 0; /* Invisible at start */
+        transform: translateX(50px); /* Start from the right */
+    }
+    50% {
+        opacity: 1; /* Become visible */
+        transform: translateX(-10px); /* Bounce slightly to the left */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateX(0); /* Move to final position */
+    }
+}
+
+/* Input field styling */
+input[type="text"] {
+    padding: 10px; /* Padding for text input */
+    border: 2px solid #007bff; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 1.2rem; /* Font size for input text */
+    margin-top: 20px; /* Margin above the input */
+    width: 300px; /* Set width for the input */
+    transition: border-color 0.3s; /* Transition for border color */
+}
+
+/* Input field focus effect */
+input[type="text"]:focus {
+    border-color: #0056b3; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
